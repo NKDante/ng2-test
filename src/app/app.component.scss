@@ -1,0 +1,47 @@
+.task-section {
+  margin: 24px;
+  padding: 24px;
+  border-bottom: 1px solid #DDD;
+}
+
+.warn {
+  color: red;
+  padding: 16px;
+}
+
+.user-table {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+
+  div {
+    display: flex;
+  }
+
+  .user-table__header {
+    border-bottom: 1px solid #AAA;
+  }
+
+  .user-table__body {
+    border-bottom: 1px solid #AAA;
+
+    & > div {
+      border-left: 1px solid #AAA;
+
+      &:last-child {
+        border-right: 1px solid #AAA;
+      }
+    }
+  }
+
+  .user-table__header,
+  .user-table__body {
+    flex-direction: row;
+    width: 100%;
+
+    & > div {
+      flex: 1 1 25%;
+      padding: 8px;
+    }
+  }
+}
