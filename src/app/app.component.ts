@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MainBackendService} from "./backend/main_backend_service/main-backend.service";
+import {IUser} from "./interfaces/user.interface";
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,14 @@ import {MainBackendService} from "./backend/main_backend_service/main-backend.se
 })
 export class AppComponent {
 
-  public user: { fullName?: string, email?: string, phone?: string, pictureUrl?: string, birthYear?: number } = {};
+  public user: IUser = {};
   public gotUser: boolean = false;
+
+  public templateForPopover: string = `
+    <div style="color: black; width: 300px;">
+      <h1>it works</h1>
+      <p>lol</p>
+    </div>`;
 
   constructor(private backendService: MainBackendService) {
   }

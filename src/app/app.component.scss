@@ -45,3 +45,23 @@
     }
   }
 }
+
+.click-me {
+  padding: 16px;
+  margin-left: 400px;
+  display: inline-block;
+
+  & > span {
+    font-size: 25px;
+    background-color: darkred;
+    color: burlywood;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    padding: 16px;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
