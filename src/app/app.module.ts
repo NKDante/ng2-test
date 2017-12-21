@@ -8,9 +8,9 @@ import {MainBackendService} from "./backend/main_backend_service/main-backend.se
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {CustomPopoverDirective} from './common/custom-popover/custom-popover.directive';
-import {BusyModule} from "angular2-busy";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CustomAutocompleteComponent} from './common/custom-autocomplete/custom-autocomplete.component';
+import {LoadingModule} from "ngx-loading";
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import {CustomAutocompleteComponent} from './common/custom-autocomplete/custom-a
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    BusyModule,
+    LoadingModule,
     BrowserAnimationsModule
   ],
   providers: [MainBackendService],

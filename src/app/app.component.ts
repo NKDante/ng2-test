@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   public cities: Array<any>;
   public currentCity: any;
   public citySearchText: string = "";
+  public loadingUser: boolean = false;
 
   public templateForPopover: string = `
     <div style="color: black; width: 300px;">
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    this.loadingUser = true;
     this.userPromise = this.backendService.getUser(seed);
 
     this.userPromise
@@ -49,6 +51,7 @@ export class AppComponent implements OnInit {
           };
 
           this.gotUser = true;
+          this.loadingUser = false;
         }
       });
   }

@@ -2,7 +2,8 @@
   <h2>Задача 1</h2>
   <app-input-with-button (onButtonClick)="getUser($event)"></app-input-with-button>
 
-  <div class="table-container" [ngBusy]="userPromise">
+  <div class="table-container">
+    <ngx-loading [show]="loadingUser" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
     <div class="user-table" *ngIf="gotUser; else userTableEmpty">
       <div class="user-table__header">
         <div>
