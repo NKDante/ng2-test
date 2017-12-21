@@ -2,34 +2,36 @@
   <h2>Задача 1</h2>
   <app-input-with-button (onButtonClick)="getUser($event)"></app-input-with-button>
 
-  <div class="user-table" *ngIf="gotUser; else userTableEmpty">
-    <div class="user-table__header">
-      <div>
-        <span>Аватар</span>
+  <div class="table-container" [ngBusy]="userPromise">
+    <div class="user-table" *ngIf="gotUser; else userTableEmpty">
+      <div class="user-table__header">
+        <div>
+          <span>Аватар</span>
+        </div>
+        <div>
+          <span>Имя</span>
+        </div>
+        <div>
+          <span>Почта</span>
+        </div>
+        <div>
+          <span>Телефон</span>
+        </div>
       </div>
-      <div>
-        <span>Имя</span>
-      </div>
-      <div>
-        <span>Почта</span>
-      </div>
-      <div>
-        <span>Телефон</span>
-      </div>
-    </div>
 
-    <div class="user-table__body">
-      <div>
-        <img src="{{user.pictureUrl}}">
-      </div>
-      <div>
-        <span>{{user.fullName}}</span>
-      </div>
-      <div>
-        <span>{{user.email}}</span>
-      </div>
-      <div>
-        <span>{{user.phone}}</span>
+      <div class="user-table__body">
+        <div>
+          <img src="{{user.pictureUrl}}">
+        </div>
+        <div>
+          <span>{{user.fullName}}</span>
+        </div>
+        <div>
+          <span>{{user.email}}</span>
+        </div>
+        <div>
+          <span>{{user.phone}}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -46,4 +48,19 @@
   <div class="click-me" [appCustomPopover]="templateForPopover">
     <span>click me!</span>
   </div>
+</div>
+
+<div class="task-section">
+  <h2>Задача 3</h2>
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <app-custom-autocomplete
+      (onInputChange)="getCities($event)"
+      [collection]="cities"
+      (onItemClick)="setCity($event)"
+      [(ngModel)]="citySearchText"
+      name="city"
+      [width]="300">
+    </app-custom-autocomplete>
+    <button type="submit" style="margin-top: 20px">Отправить форму</button>
+  </form>
 </div>

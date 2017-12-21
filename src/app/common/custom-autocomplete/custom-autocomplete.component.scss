@@ -1,0 +1,55 @@
+.autocomplete-container {
+  position: relative;
+}
+
+.items-list {
+  position: absolute;
+  z-index: 10000;
+  background-color: white;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #555;
+}
+
+.list-item {
+  width: 100%;
+  padding: 4px;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #AAA;
+  }
+}
+
+.crosshair {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  top: 1px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

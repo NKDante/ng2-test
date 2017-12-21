@@ -1,0 +1,13 @@
+<div class="autocomplete-container">
+  <input type="text" [(ngModel)]="searchStr" [ngStyle]="{'width': width + 'px' || '200px'}">
+  <div class="crosshair"
+       *ngIf="searchStr"
+       [ngStyle]="{'left': (width - 25) + 'px' || '175px'}"
+       (blur)="onBlur()"
+       (click)="removeStr()"></div>
+  <div class="items-list" [ngStyle]="{'width': width + 'px' || '200px', 'display': collection ? 'block' : 'none'}">
+    <div class="list-item" *ngFor="let item of collection" (click)="handleClick(item)">
+      <span>{{item.name}}</span>
+    </div>
+  </div>
+</div>
